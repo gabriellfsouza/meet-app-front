@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import SignIn from '~/pages/SignIn';
-import SignOut from '~/pages/SignOut';
-import Dashboard from '~/pages/Dashboard';
-import Profile from '~/pages/Profile';
-import AddEdit from '~/pages/AddEdit';
-import Details from '~/pages/Details';
+import SignIn from '../pages/SignIn';
+import SignOut from '../pages/SignOut';
+import Dashboard from '../pages/Dashboard';
+import Profile from '../pages/Profile';
+import AddEdit from '../pages/AddEdit';
+import Details from '../pages/Details';
 
 export default function Routes() {
   return (
