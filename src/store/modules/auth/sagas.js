@@ -53,8 +53,14 @@ export function setToken({ payload }) {
   if (token) api.defaults.headers.Authorization = `Bearer ${token}`;
 }
 
+export function signOut() {
+  api.defaults.headers.Authorization = undefined;
+  history.push('/');
+}
+
 export default all([
   takeLatest('@auth/SIGN_IN_REQUEST', sinIn),
   takeLatest('@auth/SIGN_UP_REQUEST', signUp),
+  takeLatest('@auth/SIGN_OUT', signOut),
   takeLatest('persist/REHYDRATE', setToken),
 ]);

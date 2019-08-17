@@ -15,7 +15,7 @@ export const Content = styled.div`
   text-align: center;
 
   > img {
-    width: 68px;
+    width: 70px;
   }
 
   form {
