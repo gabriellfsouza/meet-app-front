@@ -38,7 +38,7 @@ export const Container = styled.div`
       margin: 10px 0 20px;
     }
 
-    button {
+    /* button {
       flex: 1;
       display: flex;
       align-self: flex-end;
@@ -62,6 +62,6 @@ export const Container = styled.div`
       &:hover {
         background: ${darken(0.03, '#fa4d69')};
       }
-    }
+    } */
   }
 `;

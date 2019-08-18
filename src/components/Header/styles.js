@@ -69,5 +69,9 @@ export const Profile = styled.div`
     &:hover {
       background: ${darken(0.03, '#fa4d69')};
     }
+
+    &:active {
+      background: ${darken(0.5, '#fa4d69')};
+    }
   }
 `;
