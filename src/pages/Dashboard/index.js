@@ -1,15 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { MdAddCircleOutline, MdChevronRight } from 'react-icons/md';
 import DefaultButton from '~/components/DefaultButton';
 import { Container, Resume } from './styles';
 
-export default function Dashboard() {
+export default function Dashboard({ history }) {
+  function handlerNewMeetup() {
+    history.push('/add');
+  }
+
   return (
     <Container>
       <header>
         <h1>Meus meetups</h1>
-        <DefaultButton type="button">
+        <DefaultButton type="button" onClick={handlerNewMeetup}>
           <MdAddCircleOutline size={20} />
           Novo meetup
         </DefaultButton>
@@ -38,3 +43,7 @@ export default function Dashboard() {
     </Container>
   );
 }
+
+Dashboard.propTypes = {
+  history: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
+};
