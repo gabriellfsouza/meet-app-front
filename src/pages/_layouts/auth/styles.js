@@ -1,9 +1,23 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-export const Container = styled.div`
-  max-width: 600px;
-  margin: 50px auto;
+export const Wrapper = styled.div`
+  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #22202d, #402744);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Content = styled.div`
+  width: 100%;
+  max-width: 315px;
+  text-align: center;
+
+  > img {
+    width: 70px;
+  }
 
   form {
     display: flex;
@@ -31,19 +45,9 @@ export const Container = styled.div`
       font-weight: bold;
     }
 
-    hr {
-      border: 0;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.2);
-      margin: 10px 0 20px;
-    }
-
-    /* button {
-      flex: 1;
-      display: flex;
-      align-self: flex-end;
+    button {
       margin: 5px 0 0;
-      padding: 7px 12px;
+      height: 44px;
       background: #fa4d69;
       font-weight: bold;
       color: #fff;
@@ -52,16 +56,24 @@ export const Container = styled.div`
       font-size: 16px;
       transition: background 0.2s;
 
-      align-items: center;
-      justify-content: center;
-
-      svg {
-        margin-right: 5px;
-      }
-
       &:hover {
         background: ${darken(0.03, '#fa4d69')};
       }
-    } */
+
+      &:active {
+        background: ${darken(0.5, '#fa4d69')};
+      }
+    }
+
+    a {
+      color: #fff;
+      margin-top: 15px;
+      font-size: 16px;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 `;

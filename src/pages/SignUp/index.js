@@ -4,29 +4,33 @@ import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
-import { signInRequest } from '~/store/modules/auth/actions';
+import { signUpRequest } from '~/store/modules/auth/actions';
 
 import logo from '~/assets/logo.svg';
 
 const schema = Yup.object().shape({
+  name: Yup.string().required('O nome é obrigatório'),
   email: Yup.string()
     .email('Insira um e-mail válido')
     .required('O e-mail é obrigatório'),
-  password: Yup.string().required('A senha é obrigatória'),
+  password: Yup.string()
+    .min(6, 'No mínimo 6 caracteres')
+    .required('A senha é obrigatória'),
 });
 
-export default function SignIn() {
-  const dispatch = useDispatch();
+export default function SignOut() {
   const loading = useSelector(state => state.auth.loading);
+  const dispatch = useDispatch();
 
-  function handleSubmit({ email, password }) {
-    dispatch(signInRequest(email, password));
+  function handleSubmit({ name, email, password }) {
+    dispatch(signUpRequest(name, email, password));
   }
 
   return (
     <>
       <img src={logo} alt="MeetApp" />
       <Form schema={schema} onSubmit={handleSubmit}>
+        <Input name="name" placeholder="Nome completo" />
         <Input name="email" type="email" placeholder="Digite seu e-mail" />
         <Input
           name="password"
@@ -34,8 +38,10 @@ export default function SignIn() {
           placeholder="Sua senha secreta"
         />
 
-        <button type="submit">{loading ? 'Carregando...' : 'Entrar'}</button>
-        <Link to="/register">Criar conta grátis</Link>
+        <button type="submit">
+          {loading ? 'Carregando...' : 'Criar conta'}
+        </button>
+        <Link to="/">Já tenho login</Link>
       </Form>
     </>
   );
