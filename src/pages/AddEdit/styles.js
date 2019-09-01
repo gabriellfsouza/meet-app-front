@@ -19,6 +19,7 @@ export const Container = styled.div`
       padding: 0 15px;
       color: #fff;
       margin: 0 0 10px;
+      width:100%;
 
       &::placeholder {
         color: rgba(255, 255, 255, 0.7);

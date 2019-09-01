@@ -3,6 +3,13 @@ import styled from 'styled-components';
 export const Container = styled.div`
   margin-bottom: 30px;
 
+  span {
+    color: #fb6f91;
+    align-self: flex-start;
+    margin: 0 0 10px;
+    font-weight: bold;
+  }
+
   label {
     display: flex;
     flex-direction: column;
@@ -25,9 +32,12 @@ export const Container = styled.div`
     }
 
     img {
-      max-width: 100%;
+      width: 100%;
       max-height: 100%;
       border-radius: 4px;
+
+      object-fit: cover;
+      overflow: hidden;
       /* border: 3px solid rgba(255, 255, 255, 0.3); */
       /* background: rgba(0, 0, 0, 0.3); */
     }
