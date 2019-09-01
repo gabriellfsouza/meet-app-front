@@ -36,7 +36,7 @@ export default function Dashboard({ history }) {
           <Resume key={meetup.id}>
             <strong>{meetup.title}</strong>
             <span>
-              {format(parseISO(meetup.date), "dd 'de' MMMM', às 'H", {
+              {format(parseISO(meetup.date), "dd 'de' MMMM', às 'H:mm", {
                 locale: ptBR,
               })}
               <Link to={`/details/${meetup.id}`}>

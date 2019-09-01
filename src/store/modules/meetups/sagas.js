@@ -54,7 +54,7 @@ export function* removeMeetup({ payload }) {
         error.response &&
         error.response.data &&
         error.response.data.error) ||
-      'Erro ao remover a inscrição';
+      'Erro ao remover o meetup.';
     toast.error(JSON.stringify(message));
   }
 }
@@ -109,7 +109,7 @@ export function* updateMeetup({ payload }) {
         error.response &&
         error.response.data &&
         error.response.data.error) ||
-      'Erro ao cadastrar o meetup';
+      'Erro ao atualizar o meetup';
     toast.error(JSON.stringify(message));
   }
 }

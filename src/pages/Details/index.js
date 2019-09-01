@@ -63,7 +63,7 @@ export default function Details({ match, history }) {
         <footer>
           <span className="date">
             <MdEvent />
-            {format(parseISO(meetup.date), "dd' de 'MMMM', 'H'h'", {
+            {format(parseISO(meetup.date), "dd' de 'MMMM', 'H:mm'h'", {
               locale: ptBR,
             })}
           </span>
