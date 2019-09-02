@@ -1,68 +1,79 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# MeetApp
 
-## Available Scripts
+![](https://img.shields.io/github/issues/gabriellfsouza/meet-app-front.svg) ![](https://img.shields.io/github/forks/gabriellfsouza/meet-app-front.svg) ![](https://img.shields.io/github/stars/gabriellfsouza/meet-app-front.svg) ![]()
 
-In the project directory, you can run:
+### Introdução
 
-### `npm start`
+Esta aplicação faz parte do deafio para o bootcamp da RocketSeact (fullstack javascript developer com ReactJS, React Native e NodeJS).
+A ideia deste projeto é o desenvolvimento de uma aplicação para agendamento e
+gerencimaento de Meetups.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A parte mobile deste projeto não foi testado para IOS, somente apara Android.`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Pré requisitos
 
-### `npm test`
+Para a execução deste projeto, é necessário ter o Docker instalado e para a parte do projeto Mobile deve-se configurar o ambiente conforme link abaixo:
+https://docs.rocketseat.dev/ambiente-react-native/introducao
+É possível também executar o projeto sem o docker, basta apontar o arquivo de configuração para o Redis e Postgres externo.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Instancia dos conteineres
 
-### `npm run build`
+```
+docker run --name mongo -p 27017:27017 -d -t mongo
+docker run --name redis -p 6379:6379 -d -t redis:alpine
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instalação
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Baixe os 3 projetos (Back, Front e Mobile) e instale conforme abaixo:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Back
 
-### `npm run eject`
+```
+git clone https://github.com/gabriellfsouza/meet-app-back
+cd meet-app-back
+yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Front
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+git clone https://github.com/gabriellfsouza/meet-app-font
+cd meet-app-font
+yarn
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Mobile
 
-## Learn More
+```
+git clone https://github.com/gabriellfsouza/meet-app-mobile
+cd meet-app-mobile
+yarn
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Arquivo .env
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Todos os projetos possuem um arquivo ".env.example", que devem ser renomeados e utilizados como arquivo de configuração para as variáveis de ambiente, como conexão com a base, caminho da chamada http, etc.
 
-### Code Splitting
+### Execução
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Tanto para a parte web quanto para a front, basta executar o comando abaixo:
 
-### Analyzing the Bundle Size
+```
+yarn start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Para a versão Mobile, será necessário executar o comando abaixo:
 
-### Making a Progressive Web App
+```
+react-native run-android
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+dica: para executar localmente (mobile), basta executar o comando abaixo
 
-### Advanced Configuration
+```
+adb reverse tcp:3333 tcp:3333
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Qualquer dúvida, pode entrar em contato comigo no e-mail gabriellfsouza@gmail.com
